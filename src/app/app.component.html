@@ -1,0 +1,31 @@
+<div class="container mx-auto">
+  <div class="bg-white rounded-md shadow p-4 my-5">
+    <div class="flex items-center">
+      <h2 class="text-2xl font-bold text-slate-950">Crea tu receta. Con IA.</h2>
+      <loader [isLoading]="this.isLoading" />
+    </div> <!-- Titulo -->
+
+    <div class="flex mt-4 items-center">
+      <input type="text"
+      [(ngModel)]="this.ingredients"
+      class="
+      border-2 outline-none w-full rounded-md
+      px-4 py-2 transition-all ease-linear duration-200
+      hover:border-slate-600
+        focus:border-slate-600
+        disabled:bg-gray-300
+        disabled:border-slate-200
+        disabled:text-gray-700
+        disabled:cursor-not-allowed
+      "
+      >
+      <button (click)="this.generateRecipe()" class="p-2 bg-slate-800 text-white rounded-md ml-2" >Generar</button>
+    </div> <!-- Input -->
+  </div> <!-- Header -->
+
+
+  <div class="grid gap-4 grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+    <card *ngFor="let item of this.recipes" [recipe]="item"/>
+  </div>
+
+</div> <!-- Contenedor -->

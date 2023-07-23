@@ -1,0 +1,46 @@
+<article class="
+bg-white min-h-[450px] border border-slate-200
+  shadow rounded-md flex flex-col overflow-hidden
+">
+
+<div class="h-64 overflow-hidden relative">
+  <img class="h-full w-full object-cover absolute" [src]="this.recipe.imageUrl" alt="">
+  <div class="absolute p-2 w-full h-full bg-gradient-to-t from-slate-500/20 to-slate-900/90">
+    <h2 class="text-lg text-white font-bold"> {{ this.recipe.title }} </h2>
+  </div> <!-- Overlay -->
+</div> <!-- Imagen -->
+
+<div class="p-4">
+   <div class="flex justify-between">
+      <div class="bg-white
+        text-sm border
+       border-slate-500 rounded-md
+       px-2 py-1 text-black items-center
+       ">
+      <span class="mr-2 font-bold">{{ this.recipe.category }}</span>
+      </div> <!-- Chip 1 - Categoria -->
+      <div class="bg-white
+        text-sm border
+       border-slate-500 rounded-md
+       px-2 py-1 text-black items-center
+       ">
+      <span class="mr-2 font-bold">{{ this.recipe.ingredients.length }} Ingredientes</span>
+      </div> <!-- Chip 2 - Ingredientes -->
+
+      <div class="bg-white
+        text-sm border
+       border-slate-500 rounded-md
+       px-2 py-1 text-black items-center
+       ">
+      <span class="mr-2 font-bold">{{ this.recipe.stars }}</span>
+      </div> <!-- Chip 3 - Estrellas -->
+
+   </div> <!-- Chips -->
+
+   <h5 class="mt-4 font-bold uppercase">Instrucciones</h5>
+   <ul class="mt-2 ml-4 list-disc">
+    <li *ngFor="let item of this.recipe.instructions" >{{ item }}</li>
+   </ul>
+
+</div> <!-- Contenido -->
+</article>
